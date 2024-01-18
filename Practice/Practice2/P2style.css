@@ -1,0 +1,23 @@
+.card {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+}
+
+.card-text {
+  font-style: italic;
+  color: #777;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-subtitle {
+  color: #999;
+}
