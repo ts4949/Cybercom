@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        h1, h2 {
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 100px;
+        }
+
+        button{
+          background-color: #16aa52;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="file.js"></script>
+</head>
+<body>
+  <form id="patientForm">
+    <div class="container">
+        <h1>General Patient Information</h1>
+
+        <div class="form-group">
+            <label>Patient Gender</label>
+            <select class="form-control" id="patientGender">
+                <option selected disabled hidden>Please Select</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Patient Name</label>
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                </div>
+            </div>
+            <small class="form-text text-muted">First Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Last Name</small>
+        </div>
+
+        <h2>Patient Birth Date</h2>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <select class="form-control" id="month">
+                        <option selected disabled hidden>Please Select</option>
+                        <option>January</option>
+                        <option>February</option>
+                        <option>March</option>
+                        <option>April</option>
+                        <option>May</option>
+                        <option>June</option>
+                        <option>July</option>
+                        <option>August</option>
+                        <option>September</option>
+                        <option>October</option>
+                        <option>November</option>
+                        <option>December</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="form-control" id="day">
+                        <option selected disabled hidden>Please Select</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                        <option>25</option>
+                        <option>26</option>
+                        <option>27</option>
+                        <option>28</option>
+                        <option>29</option>
+                        <option>30</option>
+                        <option>31</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="form-control" id="year">
+                        <option selected disabled hidden>Please Select</option>
+                        <option>1970</option>
+                        <!-- Add other years here -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Patient Height (cm's)</label>
+            <input type="text" class="form-control" id="patientHeight">
+        </div>
+
+        <div class="form-group">
+            <label>Patient Weight(kg's)</label>
+            <input type="text" class="form-control" id="patientWeight">
+        </div>
+
+        <h2>Patient E-Mail</h2>
+
+        <div class="form-group">
+            <label>Patient E-Mail</label>
+            <input type="email" class="form-control" id="patientEmail">
+            <small class="form-text text-muted">example@example.com</small>
+        </div>
+
+        <div class="form-group">
+            <label>Reason for seeing the doctor</label>
+            <input type="text" class="form-control" id="patientReason">
+        </div>
+
+        <h2>Patient Medical History</h2>
+
+        <div class="form-group">
+            <label>Please list any drug allergies</label>
+            <textarea class="form-control" id="patientHistory"></textarea>
+        </div>
+
+        <section>
+          <div class="form-group">
+            <label>Have you ever had (Please check all that apply)</label>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="anemiaCheckbox">
+                <label class="form-check-label" for="anemiaCheckbox">Anemia</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="cancerCheckbox">
+                <label class="form-check-label" for="cancerCheckbox">Cancer</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="diabetesCheckbox">
+                <label class="form-check-label" for="diabetesCheckbox">Diabetes</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="goutCheckbox">
+                <label class="form-check-label" for="goutCheckbox">Gout</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="heartAttackCheckbox">
+                <label class="form-check-label" for="heartAttackCheckbox">Heart Attack</label>
+            </div>
+        </div>
+        
+
+            <div class="form-group">
+                <label>Other Illness</label>
+                <input type="text" class="form-control" id="patientOtherIllness">
+            </div>
+
+            <div class="form-group">
+                <label>Please list any Operations and Dates of Each</label>
+                <textarea class="form-control" id="patientOperations"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Please list your Current Medications</label>
+                <textarea class="form-control" id="patientMedications"></textarea>
+            </div>
+
+            <h2>Healthy & Unhealthy Habits</h2>
+
+            <div class="form-group">
+                <label>Exercise</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" value="Never" name="exercise">
+                    <label class="form-check-label">Never</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" value="1-2 days" name="exercise">
+                    <label class="form-check-label">1-2 days</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" value="3-4 days" name="exercise">
+                    <label class="form-check-label">3-4 days</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" value="5+ days" name="exercise">
+                    <label class="form-check-label">5+ days</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label>Eating following a diet</label>
+              <div class="form-check">
+                  <input type="radio" class="form-check-input" value="I have a loose diet" name="diet">
+                  <label class="form-check-label">I have a loose diet</label>
+              </div>
+              <div class="form-check">
+                  <input type="radio" class="form-check-input" value=I have a strict diet" name="diet">
+                  <label class="form-check-label">I have a strict diet</label>
+              </div>
+              <div class="form-check">
+                  <input type="radio" class="form-check-input" value="I don't have a diet plan" name="diet">
+                  <label class="form-check-label">I don't have a diet plan</label>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label>Alcohol Consumption</label>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" value="I don't drink" name="alcoholConsumption">
+                <label class="form-check-label">I don't drink</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" value="1-2 glasses/day" name="alcoholConsumption">
+                <label class="form-check-label">1-2 glasses/day</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" value="3-4 glasses/day" name="alcoholConsumption">
+                <label class="form-check-label">3-4 glasses/day</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" value="5+ glasses/day" name="alcoholConsumption">
+                <label class="form-check-label">5+ glasses/day</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label>Caffeine Consumption</label>
+          <div class="form-check">
+              <input type="radio" class="form-check-input" value="I don't use caffeine" name="caffeineConsumption">
+              <label class="form-check-label">I don't use caffeine</label>
+          </div>
+          <div class="form-check">
+              <input type="radio" class="form-check-input" value="1-2 cups/day" name="caffeineConsumption">
+              <label class="form-check-label">1-2 cups/day</label>
+          </div>
+          <div class="form-check">
+              <input type="radio" class="form-check-input" value="3-4 cups/day" name="caffeineConsumption">
+              <label class="form-check-label">3-4 cups/day</label>
+          </div>
+          <div class="form-check">
+              <input type="radio" class="form-check-input" value="5+ cups/day" name="caffeineConsumption">
+              <label class="form-check-label">5+ cups/day</label>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label>Exercise</label>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" value="No" name="smoke">
+            <label class="form-check-label">No</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" value="0-1 pack/day" name="smoke">
+            <label class="form-check-label">0-1 pack/day</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" value="1-2 packs/day" name="smoke">
+            <label class="form-check-label">1-2 packs/day</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" value="2+ packs/day" name="smoke">
+            <label class="form-check-label">2+ packs/day</label>
+        </div>
+    </div>
+            
+
+            <div class="form-group">
+                <label>Include other comments regarding your Medical History</label>
+                <textarea class="form-control" id="patientOtherComments"></textarea>
+            </div>
+        </section>
+
+        <button type="submit">Submit</button>
+    </div>
+    </form>
+</body>
+</html>
