@@ -1,0 +1,152 @@
+<html>
+<head>
+    <style>
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            width: 400px;
+            margin: 0 auto;
+            border: 1px solid black;
+            padding: 20px;
+            box-shadow: 5px 5px 10px grey;
+        }
+
+        .input {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .input label {
+            width: 100px;
+        }
+
+        .input input {
+            width: 200px;
+            height: 25px;
+            border: 1px solid black;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button button {
+            width: 100px;
+            height: 30px;
+            border: none;
+            background-color: green;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .result {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .result p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .underweight {
+            color: blue;
+        }
+
+        .normal {
+            color: green;
+        }
+
+        .overweight {
+            color: orange;
+        }
+
+        .obese {
+            color: red;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <div class="container">
+        <div class="input">
+            <label for="height">Height (m):</label>
+            <input type="number" id="height" min="0" step="0.01">
+        </div>
+        <div class="input">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" min="0" step="0.01">
+        </div>
+        <div class="button">
+            <button id="calculate">Calculate</button>
+        </div>
+        <div class="result" id="result">
+           
+        </div>
+    </div>
+    <script>
+
+        let heightInput = document.getElementById("height");
+        let weightInput = document.getElementById("weight");
+
+        let calculateButton = document.getElementById("calculate");
+
+        let resultElement = document.getElementById("result");
+
+        calculateButton.addEventListener("click", function() {
+            // Get the input values
+            let height = parseFloat(heightInput.value);
+            let weight = parseFloat(weightInput.value);
+
+            if (isNaN(height) || height <= 0) 
+            {
+                resultElement.innerHTML = "<p class='error'>Please enter a valid height.</p>";
+            } 
+            else if (isNaN(weight) || weight <= 0) 
+            {
+                resultElement.innerHTML = "<p class='error'>Please enter a valid weight.</p>";
+            } else 
+            {
+                // Calculate the BMI using the formula
+                let bmi = weight / (height * height);
+
+                // Round the BMI to two decimal places
+                bmi = bmi.toFixed(2);
+
+                // Categorize the BMI into one of the standard categories
+                let category,style;
+                if (bmi < 18.5) {
+                    category = "Underweight";
+                    style = "underweight";
+                } else if (bmi >= 18.5 && bmi < 25) {
+                    category = "Normal weight";
+                    style = "normal";
+                } else if (bmi >= 25 && bmi < 30) {
+                    category = "Overweight";
+                    style = "overweight";
+                } else {
+                    category = "Obese";
+                    style = "obese";
+                }
+
+                // Display the BMI and the category on the page
+                resultElement.innerHTML = "<p>Your BMI is <span class='" + style + "'>" + bmi + "</span>.</p>";
+                resultElement.innerHTML += "<p>You are <span class='" + style + "'>" + category + "</span>.</p>";
+            }
+        });
+    </script>
+</body>
+</html>
