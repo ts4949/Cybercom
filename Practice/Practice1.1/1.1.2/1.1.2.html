@@ -1,0 +1,51 @@
+<!--Create a webpage with a list of items. Use JavaScript to add or remove items from the list.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic List</title>
+</head>
+<body>
+
+<div>
+    <h2>Dynamic List</h2>
+    <div>
+        <input type="text" id="item-input" placeholder="Enter item">
+        <button onclick="addItem()">Add Item</button>
+        <button onclick="removeItem()">Remove Last Item</button>
+    </div>
+    <div id="list-container">
+        <ul id="item-list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function addItem() {
+        var itemInput = document.getElementById('item-input');
+        var newItemText = itemInput.value.trim();
+
+        if (newItemText !== '') {
+            var itemList = document.getElementById('item-list');
+            var newItem = document.createElement('li');
+            newItem.textContent = newItemText;
+            itemList.appendChild(newItem);
+            itemInput.value = ''; // Clear the input field after adding the item
+        }
+    }
+
+    function removeItem() {
+        var itemList = document.getElementById('item-list');
+        var lastItem = itemList.lastElementChild;
+
+        if (lastItem) {
+            itemList.removeChild(lastItem);
+        }
+    }
+</script>
+
+</body>
+</html>
