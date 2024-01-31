@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Element Modification Examples</title>
+</head>
+<body>
+
+<div id="exampleElementInnerHTML">Original Content</div>
+<div id="exampleElementTextContent">Original Content</div>
+<div id="exampleElementInsertAdjacentHTML">Original Content</div>
+
+<script>
+  // Example for element.innerHTML
+  var elementInnerHTML = document.getElementById("exampleElementInnerHTML");
+  elementInnerHTML.innerHTML = "<strong>New Content (innerHTML)</strong>";
+
+  // Example for element.textContent
+  var elementTextContent = document.getElementById("exampleElementTextContent");
+  elementTextContent.textContent = "New Text Content (textContent)";
+
+  // Example for element.insertAdjacentHTML()
+  var elementInsertAdjacentHTML = document.getElementById("exampleElementInsertAdjacentHTML");
+  elementInsertAdjacentHTML.insertAdjacentHTML('beforeend', '<p>Inserted HTML Content (insertAdjacentHTML)</p>');
+</script>
+
+</body>
+</html>

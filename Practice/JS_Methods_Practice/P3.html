@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Element Selection Example</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+  
+</head>
+<body>
+
+  <div id="exampleDiv">
+    <p class="paragraph">This is a paragraph inside a div.</p>
+    <p class="paragraph">Another paragraph inside the div.</p>
+  </div>
+
+  <ul>
+    <li class="list-item">List item 1</li>
+    <li class="list-item">List item 2</li>
+    <li class="list-item">List item 3</li>
+  </ul>
+
+  <p id="uniqueParagraph">This is a unique paragraph with an ID.</p>
+
+  <script>// example.js
+
+    // Get element by ID
+    const exampleDiv = document.getElementById('exampleDiv');
+    exampleDiv.style.border = '2px solid blue';
+    
+    // Get elements by class name
+    const paragraphs = document.getElementsByClassName('paragraph');
+    for (const paragraph of paragraphs) {
+      paragraph.style.fontWeight = 'bold';
+    }
+    
+    // Get elements by tag name
+    const listItems = document.getElementsByTagName('li');
+    for (const listItem of listItems) {
+      listItem.style.color = 'green';
+    }
+    
+    // Query Selector: Selects the first matching element
+    const uniqueParagraph = document.querySelector('#uniqueParagraph');
+    uniqueParagraph.classList.add('highlight');
+    
+    // Query Selector All: Selects all matching elements
+    const allParagraphs = document.querySelectorAll('.paragraph');
+    for (const paragraph of allParagraphs) {
+      paragraph.style.backgroundColor = 'lightblue';
+    }
+    </script>
+</body>
+</html>
