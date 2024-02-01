@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div id="sidebar">
+    Hello, <span id="name"></span><br><br><br>
+    <button type='button' onclick='dashboard()'>Dashboard</button><br><br><br>
+    <button type='button' onclick='users()'>Users</button><br><br><br>
+    <button type='button' onclick='loginSession()'>Login Session</button><br><br><br>
+    <button type='button' onclick='login()'>Logout</button><br><br><br><br>
+</div>
+
+<div id="main-content">
+   <!-- Content will be loaded here -->
+</div>
+<table>
+    <tr>
+        <td colspan="5">
+            <input type="text" id="name" placeholder="Name">
+        </td>
+        <td colspan="5">
+            <input type="email" id="email" placeholder="Email">
+        </td>
+        <td colspan="5">
+            <input type="password" id="password" placeholder ="Password">
+        </td>
+        <td colspan="5">
+            <input type='date' id="date" placeholder="Birthdate">
+            <br><button>Add User</button>
+        </td>
+    </tr>
+</table>
+
+<div id="infoPage" style="display: block;">
+    <h1>User List</h1>
+    <table id="infoTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Birthdate</th>
+          <th>Age</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+  </div>
+<script src='dashboard.js'></script>
+
+</body>
+</html>
