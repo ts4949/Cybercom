@@ -1,0 +1,51 @@
+/*Stylesheet*/
+
+.header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style the main content */
+.main {
+    margin: 20px;
+}
+
+/* Style the login form */
+.login-form {
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Style the dashboard */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style the appointment table */
+.appointment-table {
+    max-width: 800px;
+    margin: 20px;
+}
+
+/* Style the availability form */
+.availability-form {
+    max-width: 400px;
+    margin: 20px;
+}
+
+/* Style the booking form */
+.booking-form {
+    max-width: 400px;
+    margin: 20px;
+}
+
+/* Style the alert messages */
+
+
+.alert {
+    margin: 0 auto;
+    width: 80%; /* or any other width you want */
+  }

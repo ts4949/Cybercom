@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Appointment Booking App</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Online Appointment Booking App</h1>
+        <p>A simple app to book appointments with doctors</p>
+    </div>
+
+    <!-- Main content -->
+    <div class="main">
+        <!-- Login form -->
+        <div class="login-form" id="login-form">
+            <h2>Login</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select class="form-control" id="role" required>
+                        <option value="">Select role</option>
+                        <option value="doctor">Doctor</option>
+                        <option value="patient">Patient</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" id="login-button">Login</button>
+                <button type="button" class="btn btn-secondary" id="register-button">Register</button>
+            </form>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="dashboard" id="dashboard" style="display: none;">
+            <h2 id="welcome-message"></h2>
+            <button type="button" class="btn btn-danger" id="logout-button">Logout</button>
+            <!-- Appointment table -->
+            <div class="appointment-table" id="appointment-table" style="display: none;">
+                <h3 id="appointment-title"></h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Doctor</th>
+                            <th scope="col">Patient</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointment-body">
+                    </tbody>
+                </table>
+            </div>
+            <!-- Availability form -->
+            <div class="availability-form" id="availability-form" style="display: none;">
+                <h3>Set your availability</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" class="form-control" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" class="form-control" id="time" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="set-button">Set</button>
+                </form>
+            </div>
+            <!-- Booking form -->
+            <div class="booking-form" id="booking-form" style="display: none;">
+                <h3>Book an appointment</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="doctor">Doctor</label>
+                        <select class="form-control" id="doctor" required>
+                            <option value="">Select doctor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" class="form-control" id="date1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" class="form-control" id="time1" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="book-button">Book</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Alert messages -->
+        <div class="alert alert-success" id="success-alert" style="display: none;" role="alert">
+            <span id="success-message"></span>
+        </div>
+        <div class="alert alert-danger" id="error-alert" style="display: none;" role="alert">
+            <span id="error-message"></span>
+        </div>
+    </div>
+
+    <!-- Bootstrap CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
