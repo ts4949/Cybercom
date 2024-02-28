@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <h1>Random User Manager</h1>
+    <table id="users">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Users will be dynamically added here -->
+        </tbody>
+    </table>
+    <form id="form">
+        <input type="hidden" id="id" name="id">
+        <input type="text" id="name" name="name" placeholder="Enter name" required>
+        <input type="email" id="email" name="email" placeholder="Enter email" required>
+        <input type="tel" id="phone" name="phone" placeholder="Enter phone" required>
+        <button type="submit" id="create">Create</button>
+        <button type="submit" id="update">Update</button>
+        <button type="button" id="cancel">Cancel</button>
+    </form>
+    <p id="message"></p>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
