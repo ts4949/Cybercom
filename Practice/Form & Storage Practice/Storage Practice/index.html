@@ -1,0 +1,57 @@
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Add page -->
+  <div id="addPage" style="display: none;">
+    <form id="addForm" action="">
+      <h1>Add Product</h1>
+      <!-- Product title -->
+      <p><label for="title">Product Title:</label></p>
+      <p><input type="text" id="title" name="title" placeholder="Enter product title" required></p>
+      <!-- Price -->
+      <p><label for="price">Price:</label></p>
+      <p><input type="number" id="price" name="price" placeholder="Enter price" required></p>
+      <!-- Description -->
+      <p><label for="description">Description:</label></p>
+      <p><textarea id="description" name="description" placeholder="Enter description" rows="4" required></textarea></p>
+      <!-- Category -->
+      <p><label for="category">Category:</label></p>
+      <p><select id="category" name="category" required>
+        <option value="" disabled selected>Select category</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Books">Books</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Others">Others</option>
+      </select></p>
+      <!-- Submit button -->
+      <p><button type="submit" id="submitBtn">Submit</button></p>
+      <!-- Go to info page button -->
+      <p><button type="button" id="infoBtn">Go to Info Page</button></p>
+    </form>
+  </div>
+  <!-- Info page -->
+  <div id="infoPage" style="display: block;">
+    <h1>Product Info</h1>
+    <!-- Table to display product data -->
+    <table id="infoTable">
+      <thead>
+        <tr>
+          <th>Product Title</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be added dynamically -->
+      </tbody>
+    </table>
+    <!-- Go to add page button -->
+    <p><button type="button" id="addBtn">Go to Add Page</button></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
