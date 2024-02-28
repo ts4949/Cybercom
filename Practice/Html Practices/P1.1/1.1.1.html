@@ -1,0 +1,39 @@
+<!--Create a webpage with a button and a paragraph. Use JavaScript to change the text of the paragraph when the button is clicked.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Change Text on Button Click</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="changeTextButton" onclick="changeText()">Change Text</button>
+    <p id="textParagraph">This is the initial text.</p>
+
+    <script>
+        function changeText() {
+            var paragraph = document.getElementById("textParagraph");
+            paragraph.innerHTML = "New text after button click!";
+        }
+    </script>
+
+</body>
+</html>

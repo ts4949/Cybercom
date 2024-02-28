@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            form {
+                width: 25%;
+                background-color: whitesmoke; 
+                padding: 20px; 
+            }
+            th {
+                text-align: left; 
+            }
+        </style>
+    </head>
+    <body>
+        <form method="post" action="Information.html">
+            <table>
+                
+            <h2>Personal Information</h2>
+
+                <tr>
+                    <th>
+                        <label for="firstname">First Name:</label>
+                        
+                    </th>
+                    <td>
+                          <input type="text" id="fullname" required>
+                    </td>
+                </tr>
+            <tr>
+                <th>
+            <label for="lastname">Last Name:</label>
+
+                </th>
+                <td>
+                    <input type="text" id="lastname">
+
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="dob">Date of Birth:</label>
+
+                </th>
+                <td>
+            <input type="date" id="dob" required>
+                    
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="gender">Gender:</label>
+
+                </th>
+                <td>
+            <input type="radio" id="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female">
+                    <label for="female">Female:</label>
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+
+            
+            </table>
+        <table>
+            <h2>Account Information</h2>
+            <tr>
+                <th>
+                    <label for="email">Email:</label>
+
+                </th>
+                <td>
+            <input type="email" id="email" title="Your email address will be your username" required>
+                    
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="fname">Re-type Email:</label>
+
+                </th>
+                <td>
+            <input type="email" id="retypeemail" required>
+                    
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="password">Password:</label>
+
+                </th>
+                <td>
+            <input type="password" id="password" title="Min 8 characters, 1 number, Case-sensitive" required>
+                    
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="securityquestion">Security Question:</label>
+
+                </th>
+                <td>
+                    <select id="car" class="form-control">
+                        <option selected disabled hidden>Choose a security question</option>
+                        <option>What is your nickname?</option>
+                        <option>What is your favourite color?</option>
+                        <option>What is your favourite sport?</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="securityanswer">Security Answer:</label>
+
+                </th>
+                <td>
+            <input type="text" id="securityanswer">
+                    
+                </td>
+            </tr>
+        </table>
+        <table>
+            <h2>Contact Information</h2>
+            <tr>
+                <th>
+                    <label for="address">Address:</label>
+
+                </th>
+                <td>
+            <textarea id="address"></textarea>
+                    
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="city">City:</label>
+
+                </th>
+                <td>
+            <input type="text" id="city">
+                    
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="state">State:</label>
+
+                </th>
+                <td>
+                    <select id="car" class="form-control">
+                        <option selected disabled hidden>Choose a state</option>
+                        <option>Gujarat</option>
+                        <option>Maharastra</option>
+                        <option>Rajasthan</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="zipcode">Zip Code:</label>
+
+                </th>
+                <td>
+            <input type="text" id="zipcode">
+                    
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="phone">Phone:</label>
+
+                </th>
+                <td>
+            <input type="tel" id="phone" required>
+                    
+                </td>
+            </tr>
+            </table>
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

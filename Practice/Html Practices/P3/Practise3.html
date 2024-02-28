@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .center-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    p {
+      text-align: center;
+      font-size: 20px; /* Adjust as needed */
+      margin-bottom: 20px; /* Adjust spacing between text and table */
+    }
+
+    table {  
+      width: auto;
+      margin: 0;
+      table-layout: fixed;
+      border: 2px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <div class="center-container">
+    <p>Example : Nested</p>
+    <table border="1" style="text-align: center;">
+        <tr>
+            <th colspan="2" rowspan="3">CI</th>
+            <th rowspan="3">All Genders</th>
+            <th colspan="2">By Genders</th>
+       </tr>
+       <tr>
+           <td>Male</td>
+           <td>Female</td>
+       </tr>
+       <tr>
+           <td>9215604</td>
+           <td>4512358</td>
+       </tr>
+       <tr>
+           <th>Rural</th>
+           <td>6521458</td>
+           <td>4215359</td>
+           <td colspan="2">4152348</td>
+       </tr>
+    </table>
+  </div>
+</body>
+</html>

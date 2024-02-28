@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function displayInformation() {
+            var personalInfoTable = document.getElementById("personalInfoTable");
+            var accountInfoTable = document.getElementById("accountInfoTable");
+            var contactInfoTable = document.getElementById("contactInfoTable");
+
+            personalInfoTable.innerHTML = createTable("First Name", document.getElementById("fullname").value)
+                                          + createTable("Last Name", document.getElementById("lastname").value)
+                                          + createTable("Date of Birth", document.getElementById("dob").value)
+                                          + createTable("Gender", getGender());
+
+            accountInfoTable.innerHTML = createTable("Email", document.getElementById("email").value)
+                                          + createTable("Re-type Email", document.getElementById("retypeemail").value)
+                                          + createTable("Password", document.getElementById("password").value)
+                                          + createTable("Security Question", document.getElementById("car").value)
+                                          + createTable("Security Answer", document.getElementById("securityanswer").value);
+
+            contactInfoTable.innerHTML = createTable("Address", document.getElementById("address").value)
+                                          + createTable("City", document.getElementById("city").value)
+                                          + createTable("State", document.getElementById("car").value)
+                                          + createTable("Zip Code", document.getElementById("zipcode").value)
+                                          + createTable("Phone", document.getElementById("phone").value);
+        }
+
+        function createTable(fieldName, fieldValue) {
+            return "<tr><td>" + fieldName + "</td><td>" + fieldValue + "</td></tr>";
+        }
+
+        function getGender() {
+            if (document.getElementById("male").checked) {
+                return "Male";
+            } else if (document.getElementById("female").checked) {
+                return "Female";
+            } else {
+                return "";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <form onsubmit="event.preventDefault(); displayInformation();">
+        <!-- Your form fields... -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+        
+    </form>
+
+    <h2>Personal Information</h2>
+    <table id="personalInfoTable"></table>
+
+    <h2>Account Information</h2>
+    <table id="accountInfoTable"></table>
+
+    <h2>Contact Information</h2>
+    <table id="contactInfoTable"></table>
+
+</body>
+</html>

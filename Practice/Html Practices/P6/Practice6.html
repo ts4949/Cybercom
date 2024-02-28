@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <style>
+             body 
+             {
+                display: flex;
+                justify-content: center;
+            }
+
+            .form-container 
+            {
+                 width: 50%;
+            }
+
+           .address-box 
+           {
+                border: 1px solid;
+                padding: 1rem;
+                margin-bottom: 1rem;
+                width: auto;
+                height: auto;
+           }
+
+           .address-box legend 
+           {
+                font-weight: bold;
+                padding: 2rem;
+                text-align: center;
+           }
+
+           .form-group 
+           {
+                margin-bottom: 1rem;
+           }
+        </style>
+        
+    </head>
+    <body>
+        <form method="post" action="Success.html">
+        <fieldset class="address-box">
+            <legend>Your Address</legend>
+            <div class="form-group">
+              <label for="first-name">First name</label>
+              <input type="text" id="first-name" class="form-control">
+            
+              <label for="last-name">Last name</label>
+              <input type="text" id="last-name" class="form-control">
+            
+              <label for="street">Street</label>
+              <input type="text" id="street"  class="form-control">
+        
+              <label for="city">City</label>
+              <input type="text" id ="city"  class="form-control">
+            </div>
+        </fieldset>
+        
+        <fieldset class="address-box">
+            <legend>Additional Details</legend>
+            <div class="form-group">
+                
+                <label for="biography">Biography</label>
+                <textarea class="form-control" id="biography"></textarea>
+    
+                <label for="image">Image</label>
+                <input type="file" id="image" class="form-control">
+    
+                <label for="age">Age</label>
+                <select id="car" class="form-control">
+                        <option value="0 to 9 Years">0 to 9 Years</option>
+                        <option value="10 to 19 Years">10 to 19 Years</option>
+                        <option value="20 to 29 Years">20 to 29 Years</option>
+                        <option value="30 to 39 Years">30 to 39 Years</option>
+                        <option value="40 to 49 Years">40 to 49 Years</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset class="address-box">
+            <legend>Interests</legend>
+            <div class="form-group">
+
+                    <label for="hobbies">Hobbies:</label>
+                    <input type="text" id="hobbies" class="form-control">
+                
+                    <label for="car">Favourite car?</label>
+                    <select id="car" class="form-control">
+                        <option value="" selected disabled hidden>Select a car</option>
+                        <option value="volvo">Volvo</option>
+                        <option value="Bentley">Bentley</option>
+                        <option value="Jaguar">Jaguar</option>
+                        <option value="Mercedes">Mercedes</option>
+                        <option value="BMW">BMW</option>
+                    </select>
+                
+                    <label for="transport">Favourite public transport?</label>
+                    <select id ="transport" class="form-control">
+                        <optgroup label="Ground">
+                            <option>Train</option>
+                            <option>Bus</option>
+                        </optgroup>
+                        <option value="Water">Water</option>
+                    </select> 
+                
+            </div>
+        </fieldset>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+        </form>
+    </body>
+</html>
