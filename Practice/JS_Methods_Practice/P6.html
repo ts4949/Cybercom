@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Creation and Deletion Example</title>
+</head>
+<body>
+
+<!-- Initial HTML content -->
+<div id="container">
+    <p id="originalParagraph">This is the original paragraph.</p>
+</div>
+
+<script>
+    // Create a new paragraph element
+    var newParagraph = document.createElement("p");
+    newParagraph.textContent = "This is a dynamically created paragraph.";
+
+    // Create a new text node
+    var newText = document.createTextNode(" Additional text appended to the original paragraph.");
+
+    // Append the new paragraph to the container
+    document.getElementById("container").appendChild(newParagraph);
+
+    // Append the new text to the original paragraph
+    document.getElementById("originalParagraph").appendChild(newText);
+
+    // Remove the original paragraph
+    var container = document.getElementById("container");
+    var originalParagraph = document.getElementById("originalParagraph");
+    container.removeChild(originalParagraph);
+
+    // Replace the new paragraph with another paragraph
+    var replacementParagraph = document.createElement("p");
+    replacementParagraph.textContent = "This is the replacement paragraph.";
+    container.replaceChild(replacementParagraph, newParagraph);
+
+    // Remove the entire container
+    document.body.removeChild(container);
+</script>
+
+</body>
+</html>

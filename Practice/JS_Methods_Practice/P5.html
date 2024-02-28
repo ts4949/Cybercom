@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Modification Example</title>
+</head>
+<body>
+
+<div id="myDiv" class="initial" style="color: blue;" data-custom="value">Hello, World!</div>
+
+<script>
+    // Get element by ID
+    var myDiv = document.getElementById("myDiv");
+
+    // Get and set attribute
+    var customValue = myDiv.getAttribute("data-custom");
+    console.log("Initial data-custom value:", customValue);
+
+    myDiv.setAttribute("data-custom", "new-value");
+    console.log("Updated data-custom value:", myDiv.getAttribute("data-custom"));
+
+    // Modify inline style
+    myDiv.style.color = "red";
+    
+    // Modify class using classList
+    myDiv.classList.add("newClass");
+    myDiv.classList.remove("initial");
+
+    // Modify class using className
+    myDiv.className += " additionalClass";
+</script>
+
+</body>
+</html>
