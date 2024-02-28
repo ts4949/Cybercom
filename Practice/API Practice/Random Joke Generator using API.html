@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        #joke {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        #setup {
+            font-weight: bold;
+        }
+
+        #punchline {
+            margin-top: 10px;
+        }
+
+        #button {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Random Joke Generator</h1>
+    <div id="joke">
+        <p id="setup"></p>
+        <p id="punchline"></p>
+    </div>
+    <button id="button">Get another joke</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // A function to get a random joke from the API and update the DOM elements
+        function getJoke() {
+            $.ajax({
+                url: "https://official-joke-api.appspot.com/random_joke",
+                dataType: "json",
+                success: function (data) {
+                    // Update the setup and punchline elements with the joke data
+                    $("#setup").text(data.setup);
+                    $("#punchline").text(data.punchline);
+                },
+                error: function (xhr, status, error) {
+                    // Display an error message if the request fails
+                    $("#joke").text("Sorry, something went wrong. Please try again later.");
+                }
+            });
+        }
+
+        // Call the getJoke function when the page loads
+        $(document).ready(getJoke);
+
+        // Call the getJoke function when the button is clicked
+        $("#button").click(getJoke);
+    </script>
+</body>
+
+</html>
